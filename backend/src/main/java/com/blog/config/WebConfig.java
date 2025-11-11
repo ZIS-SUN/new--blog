@@ -39,6 +39,8 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor)
                 .addPathPatterns("/admin/**")  // 拦截管理端接口
+                .addPathPatterns("/comment/add")  // 拦截评论接口
+                .addPathPatterns("/message/add")  // 拦截留言接口
                 .excludePathPatterns(
                         "/auth/login",         // 登录接口
                         "/auth/register",      // 注册接口
